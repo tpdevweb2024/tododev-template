@@ -1,0 +1,96 @@
+.my_tasks_container,
+.projects_tasks_container,
+.group_tasks_container {
+  .my_tasks,
+  .projects_tasks,
+  .group_tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .collaborators {
+          display: flex;
+          gap: 5px;
+
+          img {
+            width: 30px;
+            border-radius: 20px;
+          }
+        }
+
+        .title {
+          font-weight: 500;
+          font-size: 1.25rem;
+        }
+
+        .description {
+          font-size: 1rem;
+        }
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+
+        span > svg {
+          width: 20px;
+
+          &:hover {
+            cursor: pointer;
+            fill: #63b110;
+          }
+        }
+      }
+    }
+  }
+}
+
+.add_task_container {
+  display: flex;
+  flex-direction: column;
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    input,
+    select {
+      padding: 0.5rem 0;
+    }
+  }
+
+  .btn {
+    padding: 1rem 0;
+    text-align: right;
+
+    input[type="submit"] {
+      background-color: #63b110;
+      color: white;
+      font-weight: bold;
+      border: 0;
+      outline: 0;
+      border-radius: 15px;
+      padding: 0.5rem 2rem;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #5a9f0b;
+      }
+    }
+  }
+}

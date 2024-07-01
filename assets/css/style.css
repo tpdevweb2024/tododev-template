@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+.container header {
+  width: 20%;
+  max-width: 300px;
+  background-color: #63b110;
+  padding: 2rem;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  .container header {
+    width: auto;
+    max-width: inherit;
+  }
+}
+.container header .head_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .container header .head_title {
+    padding: 0 1rem;
+  }
+}
+.container header .head_title .hamburger {
+  width: 25px;
+  padding-bottom: 27px;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .container header .head_title .hamburger {
+    display: flex;
+    padding-bottom: 0;
+  }
+}
+.container header h2 {
+  font-weight: bold;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .container header nav {
+    display: none;
+  }
+}
+.container header nav ul {
+  list-style: none;
+}
+.container header nav ul li a {
+  color: white;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.container header nav ul li a:hover {
+  text-decoration: underline;
+  color: grey;
+}
+.container main {
+  flex-grow: 1;
+}
+.container main #topbar {
+  background-color: #f1f1f1;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.container main #topbar .search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.container main #topbar .search input {
+  border-radius: 15px;
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 0.45rem 0;
+  text-indent: 10px;
+}
+.container main #topbar .search button {
+  background-color: #63b110;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  outline: 0;
+  border-radius: 15px;
+  padding: 0.5rem 2rem;
+}
+.container main #topbar .menus {
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+.container main #topbar .menus img {
+  max-width: 40px;
+  width: 100%;
+  border-radius: 100px;
+  border: 1px solid #63b110;
+}
+.container main #topbar .menus .notif_elem svg {
+  width: 20px;
+  fill: #63b110;
+}
+.container main .wrapper {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .container main .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.container main .wrapper h1 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  font-weight: 500;
+  position: relative;
+}
+.container main .wrapper h1 span {
+  position: relative;
+  width: auto;
+}
+.container main .wrapper h1::after {
+  content: "";
+  position: absolute;
+  width: 15%;
+  height: 12%;
+  opacity: 0.4;
+  left: 0;
+  bottom: 14px;
+  transform: rotate(-2deg);
+  background-color: #63b110;
+}
+
+.my_tasks_container .my_tasks,
+.my_tasks_container .projects_tasks,
+.my_tasks_container .group_tasks,
+.projects_tasks_container .my_tasks,
+.projects_tasks_container .projects_tasks,
+.projects_tasks_container .group_tasks,
+.group_tasks_container .my_tasks,
+.group_tasks_container .projects_tasks,
+.group_tasks_container .group_tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.my_tasks_container .my_tasks .task,
+.my_tasks_container .projects_tasks .task,
+.my_tasks_container .group_tasks .task,
+.projects_tasks_container .my_tasks .task,
+.projects_tasks_container .projects_tasks .task,
+.projects_tasks_container .group_tasks .task,
+.group_tasks_container .my_tasks .task,
+.group_tasks_container .projects_tasks .task,
+.group_tasks_container .group_tasks .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.my_tasks_container .my_tasks .task .content,
+.my_tasks_container .projects_tasks .task .content,
+.my_tasks_container .group_tasks .task .content,
+.projects_tasks_container .my_tasks .task .content,
+.projects_tasks_container .projects_tasks .task .content,
+.projects_tasks_container .group_tasks .task .content,
+.group_tasks_container .my_tasks .task .content,
+.group_tasks_container .projects_tasks .task .content,
+.group_tasks_container .group_tasks .task .content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.my_tasks_container .my_tasks .task .content .collaborators,
+.my_tasks_container .projects_tasks .task .content .collaborators,
+.my_tasks_container .group_tasks .task .content .collaborators,
+.projects_tasks_container .my_tasks .task .content .collaborators,
+.projects_tasks_container .projects_tasks .task .content .collaborators,
+.projects_tasks_container .group_tasks .task .content .collaborators,
+.group_tasks_container .my_tasks .task .content .collaborators,
+.group_tasks_container .projects_tasks .task .content .collaborators,
+.group_tasks_container .group_tasks .task .content .collaborators {
+  display: flex;
+  gap: 5px;
+}
+.my_tasks_container .my_tasks .task .content .collaborators img,
+.my_tasks_container .projects_tasks .task .content .collaborators img,
+.my_tasks_container .group_tasks .task .content .collaborators img,
+.projects_tasks_container .my_tasks .task .content .collaborators img,
+.projects_tasks_container .projects_tasks .task .content .collaborators img,
+.projects_tasks_container .group_tasks .task .content .collaborators img,
+.group_tasks_container .my_tasks .task .content .collaborators img,
+.group_tasks_container .projects_tasks .task .content .collaborators img,
+.group_tasks_container .group_tasks .task .content .collaborators img {
+  width: 30px;
+  border-radius: 20px;
+}
+.my_tasks_container .my_tasks .task .content .title,
+.my_tasks_container .projects_tasks .task .content .title,
+.my_tasks_container .group_tasks .task .content .title,
+.projects_tasks_container .my_tasks .task .content .title,
+.projects_tasks_container .projects_tasks .task .content .title,
+.projects_tasks_container .group_tasks .task .content .title,
+.group_tasks_container .my_tasks .task .content .title,
+.group_tasks_container .projects_tasks .task .content .title,
+.group_tasks_container .group_tasks .task .content .title {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+.my_tasks_container .my_tasks .task .content .description,
+.my_tasks_container .projects_tasks .task .content .description,
+.my_tasks_container .group_tasks .task .content .description,
+.projects_tasks_container .my_tasks .task .content .description,
+.projects_tasks_container .projects_tasks .task .content .description,
+.projects_tasks_container .group_tasks .task .content .description,
+.group_tasks_container .my_tasks .task .content .description,
+.group_tasks_container .projects_tasks .task .content .description,
+.group_tasks_container .group_tasks .task .content .description {
+  font-size: 1rem;
+}
+.my_tasks_container .my_tasks .task .actions,
+.my_tasks_container .projects_tasks .task .actions,
+.my_tasks_container .group_tasks .task .actions,
+.projects_tasks_container .my_tasks .task .actions,
+.projects_tasks_container .projects_tasks .task .actions,
+.projects_tasks_container .group_tasks .task .actions,
+.group_tasks_container .my_tasks .task .actions,
+.group_tasks_container .projects_tasks .task .actions,
+.group_tasks_container .group_tasks .task .actions {
+  display: flex;
+  gap: 10px;
+}
+.my_tasks_container .my_tasks .task .actions span > svg,
+.my_tasks_container .projects_tasks .task .actions span > svg,
+.my_tasks_container .group_tasks .task .actions span > svg,
+.projects_tasks_container .my_tasks .task .actions span > svg,
+.projects_tasks_container .projects_tasks .task .actions span > svg,
+.projects_tasks_container .group_tasks .task .actions span > svg,
+.group_tasks_container .my_tasks .task .actions span > svg,
+.group_tasks_container .projects_tasks .task .actions span > svg,
+.group_tasks_container .group_tasks .task .actions span > svg {
+  width: 20px;
+}
+.my_tasks_container .my_tasks .task .actions span > svg:hover,
+.my_tasks_container .projects_tasks .task .actions span > svg:hover,
+.my_tasks_container .group_tasks .task .actions span > svg:hover,
+.projects_tasks_container .my_tasks .task .actions span > svg:hover,
+.projects_tasks_container .projects_tasks .task .actions span > svg:hover,
+.projects_tasks_container .group_tasks .task .actions span > svg:hover,
+.group_tasks_container .my_tasks .task .actions span > svg:hover,
+.group_tasks_container .projects_tasks .task .actions span > svg:hover,
+.group_tasks_container .group_tasks .task .actions span > svg:hover {
+  cursor: pointer;
+  fill: #63b110;
+}
+
+.add_task_container {
+  display: flex;
+  flex-direction: column;
+}
+.add_task_container .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.add_task_container .input-group input,
+.add_task_container .input-group select {
+  padding: 0.5rem 0;
+}
+.add_task_container .btn {
+  padding: 1rem 0;
+  text-align: right;
+}
+.add_task_container .btn input[type=submit] {
+  background-color: #63b110;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  outline: 0;
+  border-radius: 15px;
+  padding: 0.5rem 2rem;
+}
+.add_task_container .btn input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #5a9f0b;
+}
+
+/*# sourceMappingURL=style.css.map */

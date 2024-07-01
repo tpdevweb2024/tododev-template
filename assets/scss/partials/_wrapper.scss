@@ -1,0 +1,153 @@
+.container {
+  display: flex;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+  height: 100%;
+
+  header {
+    width: 20%;
+    max-width: 300px;
+    @media screen and (max-width: 768px) {
+      width: auto;
+      max-width: inherit;
+    }
+    background-color: #63b110;
+    padding: 2rem;
+    color: white;
+
+    .head_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media screen and (max-width: 768px) {
+        padding: 0 1rem;
+      }
+
+      .hamburger {
+        width: 25px;
+        padding-bottom: 27px;
+        display: none;
+        @media screen and (max-width: 768px) {
+          display: flex;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 3rem;
+      padding-bottom: 2rem;
+    }
+
+    nav {
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+      ul {
+        list-style: none;
+        li {
+          a {
+            color: white;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+
+            &:hover {
+              text-decoration: underline;
+              color: grey;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    flex-grow: 1;
+
+    #topbar {
+      background-color: #f1f1f1;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        input {
+          border-radius: 15px;
+          width: 300px;
+          border: 1px solid #ccc;
+          padding: 0.45rem 0;
+          text-indent: 10px;
+        }
+
+        button {
+          background-color: #63b110;
+          color: white;
+          font-weight: bold;
+          border: 0;
+          outline: 0;
+          border-radius: 15px;
+          padding: 0.5rem 2rem;
+        }
+      }
+
+      .menus {
+        align-items: center;
+        gap: 10px;
+        display: flex;
+
+        img {
+          max-width: 40px;
+          width: 100%;
+          border-radius: 100px;
+          border: 1px solid #63b110;
+        }
+
+        .notif_elem svg {
+          width: 20px;
+          fill: #63b110;
+        }
+      }
+    }
+
+    .wrapper {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      gap: 2rem;
+
+      h1 {
+        font-size: 2.5rem;
+        padding-bottom: 1rem;
+        font-weight: 500;
+        position: relative;
+
+        span {
+          position: relative;
+          width: auto;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 15%;
+          height: 12%;
+          opacity: 0.4;
+          left: 0;
+          bottom: 14px;
+          transform: rotate(-2deg);
+          background-color: #63b110;
+        }
+      }
+    }
+  }
+}
