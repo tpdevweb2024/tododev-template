@@ -473,6 +473,13 @@ body {
   position: relative;
   margin-bottom: 1rem;
 }
+.bg_login .wrapper h3 {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 1rem;
+}
 .bg_login .wrapper .form {
   display: flex;
   flex-direction: column;
