@@ -12,7 +12,7 @@
     <div class="wrapper">
         <h2>TODODEV</h2>
         <h3>Identifiez-vous</h3>
-        <form action="" method="POST" class="form">
+        <form action="req/controlLogin.php" method="POST" class="form">
             <div class="input_email">
                 <input type="text" name="email" id="email" required placeholder="Votre email">
             </div>
