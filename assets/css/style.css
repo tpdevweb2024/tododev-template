@@ -450,4 +450,62 @@ body {
   background-color: #5a9f0b;
 }
 
+.bg_login {
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.bg_login .wrapper {
+  background: #fff;
+  border-radius: 12px;
+  border: #ccc 1px solid;
+  width: 400px;
+  height: auto;
+  padding: 2rem;
+  text-align: center;
+}
+.bg_login .wrapper h2 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.bg_login .wrapper .form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+.bg_login .wrapper .form .input_email,
+.bg_login .wrapper .form .input_pass {
+  width: 100%;
+}
+.bg_login .wrapper .form input {
+  padding: 0.5rem 0;
+  width: 100%;
+  text-indent: 10px;
+  font-size: 1.2rem;
+}
+.bg_login .wrapper .btn input[type=submit] {
+  background-color: #63b110;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  outline: 0;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  text-indent: 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.bg_login .wrapper .btn input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #5a9f0b;
+}
+
 /*# sourceMappingURL=style.css.map */

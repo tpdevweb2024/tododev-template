@@ -2,6 +2,10 @@
 
 $bdd = new SQLite3("./database/data.db");
 $reqAllMyTasks = $bdd->query("SELECT * FROM tasks ORDER BY end_date DESC");
+$tasks = [];
+while ($data = $reqAllMyTasks->fetchArray(1)) {
+    array_push($tasks, $data);
+}
 
 ?>
 <!DOCTYPE html>
@@ -72,13 +76,13 @@ $reqAllMyTasks = $bdd->query("SELECT * FROM tasks ORDER BY end_date DESC");
                     <h1><span>Mes tâches</span></h1>
                     <div class="my_tasks">
                         <?php
-                        while ($data = $reqAllMyTasks->fetchArray()) {
+                        foreach ($tasks as $task) {
                         ?>
                             <div class="task">
                                 <div class="content">
-                                    <h3 class="title"><?php echo $data["name"]; ?></h3>
-                                    <p class="description"><?php echo $data["description"]; ?></p>
-                                    <p><?php echo $data["end_date"]; ?></p>
+                                    <h3 class="title"><?php echo $task["name"]; ?></h3>
+                                    <p class="description"><?php echo $task["description"]; ?></p>
+                                    <p><?php echo $task["end_date"]; ?></p>
                                 </div>
                                 <div class="actions">
                                     <span class="complete"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -102,10 +106,10 @@ $reqAllMyTasks = $bdd->query("SELECT * FROM tasks ORDER BY end_date DESC");
                 </div>
                 <div class="add_task_container">
                     <h1><span>Ajouter une tâche</span></h1>
-                    <form action="">
+                    <form action="req/addTask.php" method="POST">
                         <div class="title input-group">
-                            <label for="title">Titre</label>
-                            <input type="text" name="title" id="title">
+                            <label for="name">Nom de la tache</label>
+                            <input type="text" name="name" id="name" required>
                         </div>
                         <div class="desc input-group">
                             <label for="description">Description</label>
@@ -113,14 +117,14 @@ $reqAllMyTasks = $bdd->query("SELECT * FROM tasks ORDER BY end_date DESC");
                         </div>
                         <div class="datetime input-group">
                             <label for="end_date">Date d'échéance</label>
-                            <input type="datetime-local" name="end_date" id="end_date">
+                            <input type="datetime-local" name="end_date" id="end_date" required>
                         </div>
                         <div class="priority input-group">
                             <label for="priority">Priority</label>
-                            <select name="priority" id="priority">
-                                <option value="low">Faible</option>
-                                <option value="med">Moyenne</option>
-                                <option value="high">Haute</option>
+                            <select name="priority" id="priority" required>
+                                <option value="1">Faible</option>
+                                <option value="2">Moyenne</option>
+                                <option value="3">Haute</option>
                             </select>
                         </div>
                         <div class="btn">
