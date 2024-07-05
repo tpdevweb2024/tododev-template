@@ -151,7 +151,7 @@ body {
 @media screen and (max-width: 768px) {
   .container header .head_title .hamburger {
     display: flex;
-    padding-bottom: 0;
+    padding-bottom: 2rem;
   }
 }
 .container header h2 {
@@ -183,24 +183,24 @@ body {
   background-color: #f1f1f1;
   padding: 1rem 2rem;
   display: flex;
+  gap: 20px;
   justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
   .container main #topbar {
-    flex-direction: column;
     justify-content: start;
   }
 }
 .container main #topbar .search {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.container main #topbar .search form {
   width: 100%;
 }
+.container main #topbar .search form {
+  gap: 10px;
+  align-items: center;
+  display: flex;
+}
 @media screen and (max-width: 768px) {
-  .container main #topbar .search {
+  .container main #topbar .search form {
     justify-content: space-between;
   }
 }
