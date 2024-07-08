@@ -5,12 +5,10 @@ if (!isset($_SESSION["id"]) || empty($_SESSION["id"])) {
     header("Location: login.php");
 }
 
-$bdd = new SQLite3("./database/data.db");
-$reqAllMyTasks = $bdd->query("SELECT * FROM tasks ORDER BY end_date DESC");
-$tasks = [];
-while ($data = $reqAllMyTasks->fetchArray(1)) {
-    array_push($tasks, $data);
-}
+$bdd = new PDO("sqlite:./database/data.db");
+$reqAllMyTasks = $bdd->prepare("SELECT * FROM tasks WHERE user_id = ? AND is_archived = 0 ORDER BY end_date DESC");
+$reqAllMyTasks->execute([$_SESSION["id"]]);
+$tasks = $reqAllMyTasks->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -91,7 +89,7 @@ while ($data = $reqAllMyTasks->fetchArray(1)) {
                                     <p><?php echo $task["end_date"]; ?></p>
                                 </div>
                                 <div class="actions">
-                                    <span class="complete"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <span onclick="archiveTask(<?php echo $task['id']; ?>)" class="complete"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                             <path d="M6.45455 19L2 22.5V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H6.45455ZM5.76282 17H20V5H4V18.3851L5.76282 17ZM11.2929 12.1213L15.5355 7.87868L16.9497 9.29289L11.2929 14.9497L7.40381 11.0607L8.81802 9.64645L11.2929 12.1213Z">
                                             </path>
                                         </svg></span>
@@ -295,8 +293,18 @@ while ($data = $reqAllMyTasks->fetchArray(1)) {
     </div>
     <script>
         function deleteTask(elem) {
-            if (confirm("Etes vous sur ?")) {
+            if (confirm("Etes-vous sûr de vouloir supprimer cette tâche ?")) {
                 fetch("req/deleteTask.php?id=" + elem)
+                    .then(data => {
+                        let task = document.querySelector("#task_" + elem);
+                        task.remove();
+                    })
+            }
+        }
+
+        function archiveTask(elem) {
+            if (confirm("Etes-vous sûr de vouloir archiver cette tâche ?")) {
+                fetch("req/archiveTask.php?id=" + elem)
                     .then(data => {
                         let task = document.querySelector("#task_" + elem);
                         task.remove();
