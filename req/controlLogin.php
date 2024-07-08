@@ -22,8 +22,9 @@ if (password_verify($password, $passwordHash)) {
     // LES MDP CORRESPONDENT DONC ON INSTANCIE UNE SESSION d'AUTH
     session_start();
     $_SESSION["id"] = $user["id"];
+    unset($_SESSION['temp_email']);
     // ON REDIRIGE VERS L'APPLI
-    header("Location: ../index.php");
+    header("Location:../index.php");
 } else {
-    header("Location: ../login.php?error=pass");
+    header("Location:../login.php?error=pass");
 }
