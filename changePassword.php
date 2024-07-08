@@ -32,7 +32,7 @@ $_SESSION['temp_email'] = decryptUrl($k);
 <body class="bg_login">
     <div class="wrapper">
         <h2>TODODEV</h2>
-        <h3>Enregistrez-vous, c'est gratuit !</h3>
+        <h3>Définir mon mot de passe</h3>
         <form action="req/updatePass.php" method="POST" class="form">
             <div class="input_pass">
                 <input type="password" name="password" id="password" required placeholder="Mot de passe">

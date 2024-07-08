@@ -20,6 +20,10 @@
                 <input type="submit" value="Réinitialiser">
             </div>
         </form>
+
+        <div class="forgot">
+            <a href="/login.php">Retour</a>
+        </div>
     </div>
 </body>
 

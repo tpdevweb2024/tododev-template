@@ -497,6 +497,14 @@ body {
   text-indent: 10px;
   font-size: 1.2rem;
 }
+.bg_login .wrapper .forgot {
+  margin-top: 1rem;
+}
+.bg_login .wrapper .registerLink {
+  padding-top: 2rem;
+  border-top: 1px solid #000;
+  margin-top: 1rem;
+}
 .bg_login .wrapper .btn input[type=submit] {
   background-color: #63b110;
   color: white;

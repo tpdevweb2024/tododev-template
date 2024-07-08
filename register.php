@@ -26,6 +26,9 @@
                 <input type="submit" value="Se connecter">
             </div>
         </form>
+        <div class="registerLink">
+            <a href="/login.php">S'authentifier</a>
+        </div>
     </div>
 </body>
 

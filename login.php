@@ -23,6 +23,12 @@
                 <input type="submit" value="Se connecter">
             </div>
         </form>
+        <div class="forgot">
+            <a href="/resetpass.php">Mot de passe oublié ?</a>
+        </div>
+        <div class="registerLink">
+            <a href="/register.php">S'enregistrer gratuitement</a>
+        </div>
     </div>
 </body>
 
