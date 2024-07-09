@@ -491,6 +491,12 @@ body {
 .bg_login .wrapper .form .input_pass {
   width: 100%;
 }
+.bg_login .wrapper .form .errors {
+  text-align: left;
+  display: none;
+  padding-bottom: 10px;
+  line-height: 1.2rem;
+}
 .bg_login .wrapper .form .error_email,
 .bg_login .wrapper .form .error_pass,
 .bg_login .wrapper .form .error_confirmpass {

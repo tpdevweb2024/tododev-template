@@ -20,7 +20,10 @@
             <div class="input_pass">
                 <input type="password" name="password" id="password" required placeholder="Mot de passe">
                 <div class="error_pass"></div>
-                <div class="errors" style="text-align: left; display: none">
+                <div class="errors">
+                    <div class="error_length"><svg width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path>
+                        </svg> Doit faire au moins 8 caractères</div>
                     <div class="error_upper"><svg width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path>
                         </svg> Doit contenir une majuscule</div>
@@ -95,6 +98,10 @@
             }
 
             if (rules.uppers > 0) document.querySelector(".error_upper").style.color = "green";
+            if (rules.lowers > 0) document.querySelector(".error_lower").style.color = "green";
+            if (rules.specials > 0) document.querySelector(".error_special").style.color = "green";
+            if (rules.numbers > 0) document.querySelector(".error_number").style.color = "green";
+            if (rules.count >= 8) document.querySelector(".error_length").style.color = "green";
 
             if (rules.count >= 8 && rules.lowers > 0 && rules.uppers > 0 && rules.specials > 0 && rules.numbers > 0) {
                 password.style.border = "1px solid green";

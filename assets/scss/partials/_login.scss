@@ -42,6 +42,13 @@
         width: 100%;
       }
 
+      .errors {
+        text-align: left;
+        display: none;
+        padding-bottom: 10px;
+        line-height: 1.2rem;
+      }
+
       .error_email,
       .error_pass,
       .error_confirmpass {
