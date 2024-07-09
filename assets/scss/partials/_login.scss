@@ -42,6 +42,13 @@
         width: 100%;
       }
 
+      .error_email,
+      .error_pass,
+      .error_confirmpass {
+        color: red;
+        padding: 10px 0;
+      }
+
       input {
         padding: 0.5rem 0;
         width: 100%;
