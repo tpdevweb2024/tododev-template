@@ -31,8 +31,8 @@
         </div>
     </div>
 
-    <script type="module">
-        import domains from "./assets/files/domains.js";
+    <script>
+        // import domains from "./assets/files/domains.js";
         // - 8 caractères mini
         // - Au moins un caractère spécial
         // - Au moins une majuscule
