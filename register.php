@@ -43,7 +43,7 @@
                 <div class="error_confirmpass"></div>
             </div>
             <div class="btn">
-                <input type="submit" value="Se connecter">
+                <input type="submit" value="Se connecter" id="submit" disabled>
             </div>
         </form>
         <div class="registerLink">
@@ -52,12 +52,6 @@
     </div>
 
     <script>
-        // import domains from "./assets/files/domains.js";
-        // - 8 caractères mini
-        // - Au moins un caractère spécial
-        // - Au moins une majuscule
-        // - Au moins une minuscule
-        // - Au moins 1 chiffre
         const form = document.querySelector(".form");
         const email = document.querySelector("#email");
         const password = document.querySelector("#password");
@@ -71,9 +65,13 @@
             const regex = /^[\w\-.]+@([\w-]+.)+[\w-]{2,}$/gm;
             email.style.border = email.value.match(regex) ? "1px solid green" : "1px solid red";
             document.querySelector(".error_email").textContent = !email.value.match(regex) ? "Cet email n'est pas valide" : "";
+            if (email.value.length > 0 && checkPassword()) {
+                document.getElementById("submit").removeAttribute("disabled");
+                console.log("test");
+            }
         })
 
-        password.addEventListener("click", () => {
+        password.addEventListener("focus", () => {
             document.querySelector(".errors").style.display = "block"
         })
 
@@ -106,6 +104,11 @@
             if (rules.count >= 8 && rules.lowers > 0 && rules.uppers > 0 && rules.specials > 0 && rules.numbers > 0) {
                 password.style.border = "1px solid green";
                 document.querySelector(".error_pass").textContent = "";
+                if (email.value.length > 0 && checkPassword()) {
+                    document.getElementById("submit").removeAttribute("disabled");
+                    console.log("test");
+
+                }
             } else {
                 password.style.border = "1px solid red";
                 document.querySelector(".error_pass").textContent = "Le mot de passe ne correspond pas aux exigences";
@@ -116,12 +119,15 @@
         confirmPassword.addEventListener("input", () => {
             confirmPassword.style.border = confirmPassword.value !== password.value ? "1px solid red" : "1px solid green";
             document.querySelector(".error_confirmpass").textContent = confirmPassword.value !== password.value ? "Les mots de passe ne sont pas identiques" : "";
+            if (email.value.length > 0 && checkPassword()) {
+                document.getElementById("submit").removeAttribute("disabled");
+                console.log("test");
+            }
         })
 
-        // form.addEventListener("submit", (e) => {
-        //     e.preventDefault();
-
-        // })
+        function checkPassword() {
+            return password.value === confirmPassword.value;
+        }
     </script>
 </body>
 
