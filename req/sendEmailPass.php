@@ -1,5 +1,10 @@
 <?php
 
+use PHPMailer\PHPMailer\SMTP;
+
+
+require "../vendor/autoload.php";
+
 $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
 if (!$email) {
@@ -23,4 +28,25 @@ function createLink(string $email): string
 }
 
 $sendLink = createLink($email);
-var_dump($sendLink);
+
+$mail = new \PHPMailer\PHPMailer\PHPMailer(true);
+
+//Server settings
+$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+$mail->isSMTP();                                            //Send using SMTP
+$mail->Host       = "sandbox.smtp.mailtrap.io";
+$mail->Username = "503e9c7db80059";
+$mail->Password = "95909c2c12d467";              //Set the SMTP server to send
+$mail->SMTPAuth   = true;
+$mail->Port       = 465;
+
+
+$mail->addAddress("stephane.clement@gretasudchampagne.com");
+$mail->setFrom("antho@dev.fr");
+$mail->isHTML(true);
+$mail->Subject = "Mon objet";
+$mail->Body = "Lorem ipsum dolor sit amet : <a href='$sendLink'>Cliquez-ici</a>";
+
+$mail->send();
+
+header("Location: ../login.php");

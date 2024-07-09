@@ -496,6 +496,10 @@ body {
   width: 100%;
   text-indent: 10px;
   font-size: 1.2rem;
+  outline: 0;
+}
+.bg_login .wrapper .form input:hover {
+  outline: 0;
 }
 .bg_login .wrapper .forgot {
   margin-top: 1rem;

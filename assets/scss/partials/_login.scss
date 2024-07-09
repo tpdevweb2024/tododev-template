@@ -47,6 +47,11 @@
         width: 100%;
         text-indent: 10px;
         font-size: 1.2rem;
+        outline: 0;
+
+        &:hover {
+          outline: 0;
+        }
       }
     }
 

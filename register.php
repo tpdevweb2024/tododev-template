@@ -30,6 +30,37 @@
             <a href="/login.php">S'authentifier</a>
         </div>
     </div>
+
+    <script type="module">
+        import domains from "./assets/files/domains.js";
+        // - 8 caractères mini
+        // - Au moins un caractère spécial
+        // - Au moins une majuscule
+        // - Au moins une minuscule
+        // - Au moins 1 chiffre
+        const form = document.querySelector(".form");
+        const email = document.querySelector("#email");
+        const password = document.querySelector("#password");
+        const confirmPassword = document.querySelector("#confirm_password");
+
+        email.addEventListener("input", () => {
+            const regex = /^[\w-.]+@([\w-]+.)+[\w-]{2,}$/gm;
+            email.style.border = email.value.match(regex) ? "1px solid green" : "1px solid red";
+        })
+
+        password.addEventListener("input", () => {
+            password.style.border = password.value.length < 8 ? "1px solid red" : "1px solid green";
+        })
+
+        confirmPassword.addEventListener("input", () => {
+            confirmPassword.style.border = confirmPassword.value !== password.value ? "1px solid red" : "1px solid green";
+        })
+
+        // form.addEventListener("submit", (e) => {
+        //     e.preventDefault();
+
+        // })
+    </script>
 </body>
 
 </html>
