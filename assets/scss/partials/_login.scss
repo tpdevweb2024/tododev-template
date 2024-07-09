@@ -42,6 +42,21 @@
         width: 100%;
       }
 
+      .input_pass {
+        &_eye {
+          position: relative;
+          z-index: 1;
+
+          svg {
+            z-index: 100;
+            position: absolute;
+            top: 11px;
+            right: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+
       .errors {
         text-align: left;
         display: none;

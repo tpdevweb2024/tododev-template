@@ -491,6 +491,17 @@ body {
 .bg_login .wrapper .form .input_pass {
   width: 100%;
 }
+.bg_login .wrapper .form .input_pass_eye {
+  position: relative;
+  z-index: 1;
+}
+.bg_login .wrapper .form .input_pass_eye svg {
+  z-index: 100;
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  cursor: pointer;
+}
 .bg_login .wrapper .form .errors {
   text-align: left;
   display: none;
